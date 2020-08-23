@@ -1,7 +1,6 @@
 const active = document.querySelectorAll(".x-button");
 const input = document.querySelector("#form__input");
 const button = document.querySelector("#check__button");
-console.log(active);
 
 function showTime() {
     let today = new Date();
@@ -19,6 +18,17 @@ input.addEventListener('keyup', () => {
         ? input.style.border = "2px solid red"
         : input.style.border = "1px solid rgb(197 194 194)";
 });
+
+console.log(active);
+
+for(let i = 0; i < active.length; i++) {
+    active[i].onclick = function () {
+       // let clickedValue = document.querySelector(".x-button").value;
+       let checked = this.getAttribute('data');
+       console.log(checked);
+       return checked;
+    }
+}
 
 // function validateData() {
 //     if(input.value = "" || ) {

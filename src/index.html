@@ -24,15 +24,15 @@
             <form id="form" name="form" action="index.php" method="get">
                 <p>Выберите X:</p>
                 <div class="form__container" id="x-buttons-wrapper">
-                    <input class="x-button" value="4" disabled>
-                    <input class="x-button" value="3" disabled>
-                    <input class="x-button" value="2" disabled>
-                    <input class="x-button" value="1" disabled>
-                    <input class="x-button" value="0" disabled>
-                    <input class="x-button" value="-1" disabled>
-                    <input class="x-button" value="-2" disabled>
-                    <input class="x-button" value="-3" disabled>
-                    <input class="x-button" value="-4" disabled>
+                    <input class="x-button" value="4" type="button" data="4"/>
+                    <input class="x-button" value="3" type="button" data="3"/>
+                    <input class="x-button" value="2" type="button" data="2"/>
+                    <input class="x-button" value="1" type="button" data="1"/>
+                    <input class="x-button selected" value="0" type="button" data="0"/>
+                    <input class="x-button" value="-1" type="button" data="-1"/>
+                    <input class="x-button" value="-2" type="button" data="-2"/>
+                    <input class="x-button" value="-3" type="button" data="-3"/>
+                    <input class="x-button" value="-4" type="button" data="-4"/>
                 </div>
                 <p>Выберите Y:</p>
                 <div class="form__container" id="form__input__wrapper">
@@ -46,8 +46,8 @@
                 </div>
                 <p>Выберите R:</p>
                 <div class="form__container" id="form__select__wrapper">
-                    <select class="y-r-input" id="form__select">
-                        <option value="1">1</option>
+                    <select class="y-r-input" id="form__selector">
+                        <option value="1" selected>1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
