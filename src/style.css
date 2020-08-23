@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+header {
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1%;
+}
+
+header p {
+    color: #3498db;
+    margin-top: 0.7%;
+    font-family: sans-serif;
+    font-size: 27px;
+}
+
+img {
+    height: 250px;
+    width: 330px;
+    margin-top: 5%;
+    background: white;
+}
+
+form {
+    height: 660px;
+    width: 53%;
+    margin: 2%;
+    box-shadow: 0 0 0 3px rgb(226 226 226);
+    background: #fff;
+    border-radius: 6px;
+    opacity: inherit;
+}
+
+.form__container {
+    width: 99%;
+}
+
+form p {
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5%;
+    color: #545454;
+}
+
+
+#x-buttons-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.x-button {
+    height: 40px;
+    width: 70px;
+    outline: none;
+    border: 1px solid rgb(212 226 228);
+    cursor: pointer;
+    margin-left: 1%;
+    text-align: center;
+    border-radius: 18px;
+    font-size: x-large;
+    font-family: sans-serif;
+    background-color: #ffffff;
+    user-select: none;
+}
+
+.x-button:hover {
+    transform:scale(1.2,1.2);
+    user-select: none;
+}
+
+.selected {
+    color: red;
+    border: 1px solid #7b542b;
+    user-select: none;
+}
+
+#form__input__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#form__select__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.y-r-input {
+    width: 55%;
+    height: 48px;
+    font-size: x-large;
+    font-family: sans-serif;
+    padding: 1%;
+    outline: none;
+    border: 1px solid rgb(197 194 194);
+    border-radius: 4px;
+}
+
+.y-r-input:focus {
+    border: 1px solid #93b7d6;
+}
+
+#check__button__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 8%;
+}
+
+#check__button {
+    width: 46%;
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    cursor: pointer;
+    color: #5c59ec;
+    height: 46px;
+    border: 1px solid #5c59ec;
+    outline: none;
+    background: none;
+    border-radius: 4px;
+}
+
+#check__button:disabled {
+    opacity: 36%
+}
+/*result of table from back*/
+
+table {
+    width: 53%;
+    border-collapse: collapse;
+    margin:50px auto;
+    cursor: pointer;
+}
+
+/* Zebra striping */
+tr:nth-of-type(odd) {
+    background: #eee;
+}
+
+th {
+    background: #3498db;
+    color: white;
+    font-weight: bold;
+}
+
+td, th {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 20px;
+}
+
+tr:hover {
+    background: rgba(75,238,135,0.34);
+}
+
+/*
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+
+@media
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+    table {
+        width: 70%;
+    }
+
+    /* Force table to not be like tables anymore */
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tr { border: 1px solid #ccc; }
+
+    td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        /* Label the data */
+        content: attr(data-column);
+        color: #000;
+        font-weight: bold;
+    }
+}
+
+#timezone {
+    font-size: 50px;
+    margin-bottom: 2%;
+    color: #0d9452;
+    font-family: sans-serif;
+}
