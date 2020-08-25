@@ -24,15 +24,16 @@
             <form id="form" name="form" action="index.php" method="get">
                 <p>Выберите X:</p>
                 <div class="form__container" id="x-buttons-wrapper">
-                    <input class="x-button" value="4" type="button" data="4"/>
-                    <input class="x-button" value="3" type="button" data="3"/>
-                    <input class="x-button" value="2" type="button" data="2"/>
-                    <input class="x-button" value="1" type="button" data="1"/>
-                    <input class="x-button selected" value="0" type="button" data="0"/>
-                    <input class="x-button" value="-1" type="button" data="-1"/>
-                    <input class="x-button" value="-2" type="button" data="-2"/>
-                    <input class="x-button" value="-3" type="button" data="-3"/>
-                    <input class="x-button" value="-4" type="button" data="-4"/>
+                    <input class="x-button" value="4" type="button"  data="4" onclick="takeX(this.value)"/>
+                    <input class="x-button" value="3" type="button" data="3" onclick="takeX(this.value)"/>
+                    <input class="x-button" value="2" type="button"  data="2" onclick="takeX(this.value)"/>
+                    <input class="x-button" value="1" type="button" data="1" onclick="takeX(this.value)"/>
+                    <input class="x-button selected" value="0" name="X" type="button" data="0" onclick="takeX(this.value)"/>
+                    <input class="x-button" value="-1" type="button" data="-1" onclick="takeX(this.value)"/>
+                    <input class="x-button" value="-2" type="button" data="-2" onclick="takeX(this.value)"/>
+                    <input class="x-button" value="-3" type="button" data="-3" onclick="takeX(this.value)"/>
+                    <input class="x-button" value="-4" type="button"  data="-4" onclick="takeX(this.value)"/>
+                    <input type = "hidden" name = "X" id = "hidden" value = "-1">
                 </div>
                 <p>Выберите Y:</p>
                 <div class="form__container" id="form__input__wrapper">
@@ -41,22 +42,24 @@
                         maxlength="6"
                         class="y-r-input"
                         id="form__input"
-                        placeholder="choose a number..."
+                        placeholder="choose a number between (-3,5)"
+                        name = "Y"
                     />
                 </div>
                 <p>Выберите R:</p>
                 <div class="form__container" id="form__select__wrapper">
-                    <select class="y-r-input" id="form__selector">
-                        <option value="1" selected>1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
+                    <select class="y-r-input" id="form__selector" onchange="getSelectValue()">
+                        <option value="1" name="R" selected>1</option>
+                        <option value="2" name="R">2</option>
+                        <option value="3" name="R">3</option>
+                        <option value="4" name="R">4</option>
+                        <option value="5" name="R">5</option>
                     </select>
                 </div>
                 <div class="form__container" id="check__button__wrapper">
-                    <input type="submit" id="check__button" value="Проверить!" disabled/>
+                    <input type="submit" id="check__button" value="Проверить!" />
                 </div>
+                <p id = "notification" name = "notification">  </p>
             </form>
             <table>
                 <thead>
