@@ -24,16 +24,16 @@
             <form id="form" name="form" action="index.php" method="get">
                 <p>Выберите X:</p>
                 <div class="form__container" id="x-buttons-wrapper">
-                    <input class="x-button" value="4" type="button"  data="4" onclick="takeX(this.value)"/>
-                    <input class="x-button" value="3" type="button" data="3" onclick="takeX(this.value)"/>
-                    <input class="x-button" value="2" type="button"  data="2" onclick="takeX(this.value)"/>
-                    <input class="x-button" value="1" type="button" data="1" onclick="takeX(this.value)"/>
-                    <input class="x-button selected" value="0" name="X" type="button" data="0" onclick="takeX(this.value)"/>
-                    <input class="x-button" value="-1" type="button" data="-1" onclick="takeX(this.value)"/>
-                    <input class="x-button" value="-2" type="button" data="-2" onclick="takeX(this.value)"/>
-                    <input class="x-button" value="-3" type="button" data="-3" onclick="takeX(this.value)"/>
-                    <input class="x-button" value="-4" type="button"  data="-4" onclick="takeX(this.value)"/>
-                    <input type = "hidden" name = "X" id = "hidden" value = "-1">
+                    <input class="x-button" value="4" type="button" onclick="takeX(this.value)"/>
+                    <input class="x-button" value="3" type="button" onclick="takeX(this.value)"/>
+                    <input class="x-button" value="2" type="button" onclick="takeX(this.value)"/>
+                    <input class="x-button" value="1" type="button" onclick="takeX(this.value)"/>
+                    <input class="x-button selected" selected value="0" name="X" type="button" onclick="takeX(this.value)"/>
+                    <input class="x-button" value="-1" type="button" onclick="takeX(this.value)"/>
+                    <input class="x-button" value="-2" type="button" onclick="takeX(this.value)"/>
+                    <input class="x-button" value="-3" type="button" onclick="takeX(this.value)"/>
+                    <input class="x-button" value="-4" type="button" onclick="takeX(this.value)"/>
+                    <input type = "hidden" name = "X" id = "hidden" value = "0">
                 </div>
                 <p>Выберите Y:</p>
                 <div class="form__container" id="form__input__wrapper">
@@ -48,16 +48,17 @@
                 </div>
                 <p>Выберите R:</p>
                 <div class="form__container" id="form__select__wrapper">
-                    <select class="y-r-input" id="form__selector" onchange="getSelectValue()">
-                        <option value="1" name="R" selected>1</option>
-                        <option value="2" name="R">2</option>
-                        <option value="3" name="R">3</option>
-                        <option value="4" name="R">4</option>
-                        <option value="5" name="R">5</option>
+                    <select class="y-r-input" id="form__selector" onchange="getSelectedValue()">
+                        <option value="1" name="R" selected onclick="getSelectedValue(this.value)">1</option>
+                        <option value="2" name="R" onclick="getSelectedValue(this.value)">2</option>
+                        <option value="3" name="R" onclick="getSelectedValue(this.value)">3</option>
+                        <option value="4" name="R" onclick="getSelectedValue(this.value)">4</option>
+                        <option value="5" name="R" onclick="getSelectedValue(this.value)">5</option>
                     </select>
+                    <input type = "hidden" name = "R" id = "hiddenR" value = "1">
                 </div>
                 <div class="form__container" id="check__button__wrapper">
-                    <input type="submit" id="check__button" value="Проверить!" />
+                    <input type="submit" id="check__button" value="Проверить!"/>
                 </div>
                 <p id = "notification" name = "notification">  </p>
             </form>

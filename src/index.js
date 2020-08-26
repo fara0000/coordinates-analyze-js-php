@@ -1,9 +1,9 @@
-const active = document.querySelectorAll(".x-button");
 const input = document.querySelector("#form__input");
 const button = document.querySelector("#check__button");
 let x = 0;
 let y = 0;
 let r = 0;
+// button.disabled = true;
 
 function showTime() {
     let today = new Date();
@@ -22,36 +22,28 @@ input.addEventListener('keyup', () => {
         : input.style.border = "1px solid rgb(197 194 194)";
 });
 
-console.log(active);
-
-// for(let i = 0; i < active.length; i++) {
-//     active[i].onclick = function () {
-//        // let clickedValue = document.querySelector(".x-button").value;
-//        let checked = this.getAttribute('data');
-//        console.log(checked);
-//        return checked;
-//     }
-// }
-
 function takeX(number){
     console.log(number);
     let btn = document.getElementById("hidden");
     btn.value = number;
-    r = number;
+    x = number;
 }
 
-function getSelectValue(){
-    // let btn = document.getElementById("hiddenR");
-    // btn.value = number;
-    // r = number;
-    let btn = document.getElementById("form__selector").value;
-    console.log(btn);
+function getSelectedValue(){
+    let btn = document.getElementById("hiddenR");
+    let selector = document.getElementById("form__selector");
+    let selectedValue = selector.options[selector.selectedIndex].value;
+    btn.value = selectedValue;
+    r = selectedValue;
 }
 
-// function validateData() {
-//     if(input.value = "" || ) {
-//
-//     }
-// }
+function validateData() {
+    console.log(button.disabled)
+    input.value = "" || input.value <= -3 || input.value >= 5 || !/^[0-9 | . | -]+$/i.test(input.value)
+        ? button.disabled = true
+        : button.disabled = false;
+}
+
+setInterval(validateData,100);
 
 
