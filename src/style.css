@@ -37,8 +37,8 @@ img {
 }
 
 form {
-    height: 670px;
-    width: 53%;
+    min-height: 650px;
+    width: 45%;
     margin: 2%;
     box-shadow: 0 0 0 3px rgb(226 226 226);
     background: #fff;
@@ -70,8 +70,8 @@ form p {
 }
 
 .x-button {
-    height: 40px;
-    width: 70px;
+    height: 38px;
+    width: 60px;
     outline: none;
     border: 1px solid rgb(212 226 228);
     cursor: pointer;
@@ -90,8 +90,7 @@ form p {
 }
 
 .selected {
-    color: red;
-    border: 1px solid #6b6866;
+    border: 2px solid #000;
     user-select: none;
 }
 
@@ -146,7 +145,15 @@ form p {
 }
 
 #check__button:disabled {
-    opacity: 36%
+    opacity: 0.3;
+}
+
+#notification {
+    color: red;
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 28px;
+    font-weight: bold;
 }
 /*result of table from back*/
 

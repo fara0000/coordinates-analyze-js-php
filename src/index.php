@@ -11,7 +11,7 @@
         // $Y = $_GET["Y"];
         // $R = $_GET["R"]
         // echo "XYR: <b>".$X . " " . $Y . " " $R "</b>";
-        echo "HI";
+        echo "<p>HI<p>";
     ?>
 </body>
 </html>

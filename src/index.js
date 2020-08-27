@@ -1,9 +1,16 @@
 const input = document.querySelector("#form__input");
 const button = document.querySelector("#check__button");
+const notification = document.querySelector("#notification");
+// const all = document.querySelectorAll(".x-button");
 let x = 0;
-let y = 0;
 let r = 0;
-// button.disabled = true;
+// console.log(all);
+
+// all.forEach((item) => item.onclick(() => {
+//     item.add("selected")
+// }))
+
+
 
 function showTime() {
     let today = new Date();
@@ -23,7 +30,6 @@ input.addEventListener('keyup', () => {
 });
 
 function takeX(number){
-    console.log(number);
     let btn = document.getElementById("hidden");
     btn.value = number;
     x = number;
@@ -39,9 +45,13 @@ function getSelectedValue(){
 
 function validateData() {
     console.log(button.disabled)
-    input.value = "" || input.value <= -3 || input.value >= 5 || !/^[0-9 | . | -]+$/i.test(input.value)
-        ? button.disabled = true
-        : button.disabled = false;
+    if(input.value === "" || input.value <= -3 || input.value >= 5 || !/^[0-9 | . | -]+$/i.test(input.value)) {
+        notification.innerHTML = 'Введите корректное число Y'
+        button.disabled = true
+    } else  {
+        notification.innerHTML = ''
+        button.disabled = false;
+    }
 }
 
 setInterval(validateData,100);
