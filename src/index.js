@@ -2,14 +2,24 @@ const input = document.querySelector("#form__input");
 const button = document.querySelector("#check__button");
 const notification = document.querySelector("#notification");
 // const all = document.querySelectorAll(".x-button");
+// const all_array = Array.prototype.slice.call(all);
+// console.log(all_array);
 let x = 0;
 let r = 0;
 // console.log(all);
 
-// all.forEach((item) => item.onclick(() => {
-//     item.add("selected")
+// all_array.forEach(element => {
+//     console.log(element);
+//     element.addEventListener('onclick', () => {
+//         console.log(element);
+//         element.classList.add("selected");
+//     })
+// })
+    
+// });((item) => item.onclick(() => {
+//     console.log(item, 'lll')
+//     item.classList.add("selected")
 // }))
-
 
 
 function showTime() {
@@ -44,7 +54,6 @@ function getSelectedValue(){
 }
 
 function validateData() {
-    console.log(button.disabled)
     if(input.value === "" || input.value <= -3 || input.value >= 5 || !/^[0-9 | . | -]+$/i.test(input.value)) {
         notification.innerHTML = 'Введите корректное число Y'
         button.disabled = true

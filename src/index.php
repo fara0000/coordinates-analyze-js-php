@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body> 
-    <?
+    <?php
        if( isset($_GET["X"]) && isset($_GET["Y"]) && isset($_GET["R"])) {
            echo "<table>
            <thead>
@@ -30,6 +30,14 @@
             <td>$x</td>
             <td>$y</td>
             <td>$r</td>";
+
+            $extime_end = microtime();
+            $extime = round( ($extime_end - $extime_start) * 1000, 3 );
+            echo "<td>$extime</td>";
+
+            date_default_timezone_set('Europe/Moscow');
+            $date = date("F j, H:i:s");
+            echo "<td>$date</td>";
 
             function validate() {
                 global $x, $y, $r;
@@ -68,6 +76,8 @@
             if (validate()) {
                 echo "<td>Точка " . ( check_area() ? "" : "не " ) . "входит!</td></tr>";
             }
+
+            echo "</tbody></table>";
        }
     ?>
 </body>
