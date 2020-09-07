@@ -18,7 +18,7 @@ let r = 0;
     
 // });((item) => item.onclick(() => {
 //     console.log(item, 'lll')
-//     item.classList.add("selected")
+//     item.classList.add("selected");
 // }))
 
 
