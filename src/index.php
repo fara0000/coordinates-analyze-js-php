@@ -34,12 +34,12 @@
                     <input class="x-button" value="3" type="button" onclick="takeX(this.value)"/>
                     <input class="x-button" value="2" type="button" onclick="takeX(this.value)"/>
                     <input class="x-button" value="1" type="button" onclick="takeX(this.value)"/>
-                    <input class="x-button selected"  value="0" name="X" type="button" onclick="takeX(this.value)"/>
+                    <input class="x-button"  value="0" name="X" type="button" onclick="takeX(this.value)"/>
                     <input class="x-button" value="-1" type="button" onclick="takeX(this.value)"/>
                     <input class="x-button" value="-2" type="button" onclick="takeX(this.value)"/>
                     <input class="x-button" value="-3" type="button" onclick="takeX(this.value)"/>
                     <input class="x-button" value="-4" type="button" onclick="takeX(this.value)"/>
-                    <input type = "hidden" name = "X" id = "hidden" value = "0">
+                    <input type = "hidden" name = "X" id = "hidden" value = "">
                 </div>
                 <p>Выберите Y:</p>
                 <div class="form__container" id="form__input__wrapper">
