@@ -30,15 +30,15 @@
             <form id="form" name="form" action="index.php" method="GET">
                 <p>Выберите X:</p>
                 <div class="form__container" id="x-buttons-wrapper">
-                    <input class="x-button" id="x4" value="4" type="button" onclick="takeX(this.value)"/>
-                    <input class="x-button" id="x3" value="3" type="button" onclick="takeX(this.value)"/>
-                    <input class="x-button" id="x2" value="2" type="button" onclick="takeX(this.value)"/>
-                    <input class="x-button" id="x1" value="1" type="button" onclick="takeX(this.value)"/>
-                    <input class="x-button" id="x0" value="0" name="X" type="button" onclick="takeX(this.value)"/>
-                    <input class="x-button" id="x-1" value="-1" type="button" onclick="takeX(this.value)"/>
-                    <input class="x-button" id="x-2" value="-2" type="button" onclick="takeX(this.value)"/>
-                    <input class="x-button" id="x-3" value="-3" type="button" onclick="takeX(this.value)"/>
-                    <input class="x-button" id="x-4" value="-4" type="button" onclick="takeX(this.value)"/>
+                    <button type="button" class="x-button" id="x_-4" onclick="changeX('-4')">-4</button>
+                    <button type="button" class="x-button" id="x_-3" onclick="changeX('-3')">-3</button>
+                    <button type="button" class="x-button" id="x_-2" onclick="changeX('-2')">-2</button>
+                    <button type="button" class="x-button" id="x_-1" onclick="changeX('-1')">-1</button>
+                    <button type="button" class="x-button" id="x_0" onclick="changeX('0')">0</button>
+                    <button type="button" class="x-button" id="x_1" onclick="changeX('1')">1</button>
+                    <button type="button" class="x-button" id="x_2" onclick="changeX('2')">2</button>
+                    <button type="button" class="x-button" id="x_3" onclick="changeX('3')">3</button>
+                    <button type="button" class="x-button" id="x_4" onclick="changeX('4')">4</button>
                     <input type = "hidden" name = "X" id = "hidden" value = "">
                 </div>
                 <p>Выберите Y:</p>
@@ -96,39 +96,15 @@
                         $is_valid = true;
 
                         if (filter_var($x, FILTER_VALIDATE_INT) === false || (+$x < -4) || (+$x > 4)) {
-                            echo "<table>
-                                <caption style=\"font-size: 38px; color: #3e3939; font-family: monospace; margin-bottom: 2%;\">Результат Запроса</caption>
-                                <thead>
-                                <tr>
-                                    <th>Result</th>
-                                </tr>
-                                </thead>
-                                <tbody>";
-                            echo "<tr><td style=\"font-size: 40px; color: red; font-family: monospace; margin-bottom: 2%;\">Значение X некорректно!</td></tr></tbody></table>";
+                            echo "<p style=\"font-size: 40px; color: red; font-family: monospace; margin-bottom: 2%;\">Значение X некорректно!</p>";
                             $is_valid = false;
                         }
                         if (filter_var($y, FILTER_VALIDATE_FLOAT) === false || (+$y <= -3) || (+$y >= 5)) {
-                            echo "<table>
-                                <caption style=\"font-size: 38px; color: #3e3939; font-family: monospace; margin-bottom: 2%;\">Результат Запроса</caption>
-                                <thead>
-                                <tr>
-                                    <th>Result</th>
-                                </tr>
-                                </thead>
-                                <tbody>";
-                            echo "<tr><td style=\"font-size: 40px; color: red; font-family: monospace; margin-bottom: 2%;\">Значение Y некорректно!</td></tr></tbody></table>";
+                            echo "<p style=\"font-size: 40px; color: red; font-family: monospace; margin-bottom: 2%;\">Значение Y некорректно!</p>";
                             $is_valid = false;
                         }
                         if (filter_var($r, FILTER_VALIDATE_INT) === false || (+$r < 1) || (+$r > 5)) {
-                            echo "<table>
-                                <caption style=\"font-size: 38px; color: #3e3939; font-family: monospace; margin-bottom: 2%;\">Результат Запроса</caption>
-                                <thead>
-                                <tr>
-                                    <th>Result</th>
-                                </tr>
-                                </thead>
-                                <tbody>";
-                            echo "<tr><td style=\"font-size: 40px; color: red; font-family: monospace; margin-bottom: 2%;\">Значение R некорректно!</td></tr></tbody></table>";
+                            echo "<p style=\"font-size: 40px; color: red; font-family: monospace; margin-bottom: 2%;\">Значение R некорректно!</p>";
                             $is_valid = false;
                         }
 

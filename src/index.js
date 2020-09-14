@@ -1,8 +1,8 @@
 const input = document.querySelector("#form__input");
 const check_button = document.querySelector("#check__button");
 const notification = document.querySelector("#notification");
-const x_button_all = document.querySelectorAll(".x_button");
-const x_button = document.querySelector("#hidden");
+const x_button_all = document.querySelectorAll(".x-button");
+const x_value = document.querySelector("#hidden");
 let x = 0;
 let r = 0;
 
@@ -23,23 +23,31 @@ input.addEventListener('keyup', () => {
         : input.style.border = "1px solid rgb(197 194 194)";
 });
 
-function takeX(number){
+function checkX() {
+    let buttons = document.querySelectorAll(".x-button");
+    if (x === undefined) {
+        buttons.forEach(button => button.classList.add("input_err"));
+        return false;
+    }
+    buttons.forEach(button => button.classList.remove("input_err"));
+    return true;
+}
+
+function changeX(xValue) {
+    let button = document.getElementById("x_" + xValue);
     let btn = document.getElementById("hidden");
-    btn.value = number;
-    x = number;
-    console.log(x,'x')
-    let button = document.getElementById("x" + number);
-    console.log(button, 'button')
     if (!button.classList.contains("selected")) {
-        x = number;
+        x = xValue;
         let oldSelectedButton = document.querySelector(".selected");
         if (oldSelectedButton !== null)
             oldSelectedButton.classList.remove("selected");
         button.classList.add("selected");
+        checkX();
     } else {
         x = undefined;
         button.classList.remove("selected");
     }
+    btn.value = xValue;
 }
 
 function getSelectedValue(){
@@ -55,7 +63,7 @@ function validateData() {
         notification.innerHTML = 'Введите корректное число Y';
         check_button.disabled = true;
     }
-    else if(x_button.value === "") {
+    else if(x_value.value === "") {
         notification.innerHTML = 'Выберите число X';
         check_button.disabled = true;
     } 

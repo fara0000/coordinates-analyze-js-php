@@ -90,7 +90,7 @@ form p {
 }
 
 .selected {
-    border: 2px solid #000;
+    border: 1px solid rgba(75,238,135,0.34);
     user-select: none;
 }
 
