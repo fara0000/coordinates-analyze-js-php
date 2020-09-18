@@ -68,42 +68,21 @@
                 </div>
                 <p id = "notification" name = "notification"> </p>
             </form>
-            <!-- <?php 
-                $duration_start = microtime(true);
-                if (isset($_GET['X']) && isset($_GET['Y']) && isset($_GET['R'])) {                 
-                    $x = (integer)htmlentities($_GET['X']); 
-                    $y = (double)htmlentities($_GET['Y']); 
-                    $r = (integer)htmlentities($_GET['R']); 
-                    $flag = -1;
-                        if (($x < -5) or ($x > 3)) {
-                            $flag = 0;
-                            echo '<table><tr><td>Значение Х лежит вне диапазона</td></td>';
-                        }
-                        elseif(($y <= -3) or ($y >= 5)) {
-                            $flag = 0;
-                            echo '<tr><td>Значение Y лежит вне диапазона</td></td>';
-                        } 
-                        elseif(($r < 1) or ($r > 5)) {
-                            $flag = 0;
-                            echo '<tr><td>Значение R лежит вне диапазона</td></td></table>';
-                        }  
-                }
-            ?> -->
             <?php
+                $duration_start = microtime(true);
                 if( isset($_GET["X"]) && isset($_GET["Y"]) && isset($_GET["R"])) {
                     function validate() {
-                        global $x, $y, $r;
                         $is_valid = true;
 
-                        if (filter_var($x, FILTER_VALIDATE_INT) === false || (+$x < -4) || (+$x > 4)) {
+                        if (!is_numeric($_GET["X"]) || ($_GET["X"] < -4) || ($_GET["X"] > 4)) {
                             echo "<p style=\"font-size: 40px; color: red; font-family: monospace; margin-bottom: 2%;\">Значение X некорректно!</p>";
                             $is_valid = false;
                         }
-                        if (filter_var($y, FILTER_VALIDATE_FLOAT) === false || (+$y <= -3) || (+$y >= 5)) {
+                        if (!is_numeric($_GET["Y"]) || ($_GET["Y"] <= -3) || ($_GET["Y"] >= 5)) {
                             echo "<p style=\"font-size: 40px; color: red; font-family: monospace; margin-bottom: 2%;\">Значение Y некорректно!</p>";
                             $is_valid = false;
                         }
-                        if (filter_var($r, FILTER_VALIDATE_INT) === false || (+$r < 1) || (+$r > 5)) {
+                        if (!is_numeric($_GET["R"]) || ($_GET["R"] < 1) || ($_GET["R"] > 5)) {
                             echo "<p style=\"font-size: 40px; color: red; font-family: monospace; margin-bottom: 2%;\">Значение R некорректно!</p>";
                             $is_valid = false;
                         }

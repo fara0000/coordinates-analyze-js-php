@@ -24,23 +24,27 @@ input.addEventListener('keyup', () => {
 });
 
 function checkX() {
-    let buttons = document.querySelectorAll(".x-button");
-    if (x === undefined) {
-        buttons.forEach(button => button.classList.add("input_err"));
-        return false;
+    let button = document.getElementById("x_" + xValue);
+    let btn = document.getElementById("hidden");
+
+    if (!button.classList.contains("selected")) {
+        btn.value === '';
     }
-    buttons.forEach(button => button.classList.remove("input_err"));
-    return true;
-}
+    else {
+        return;
+    }
+} // не работает удаление значене hidden ввода когда нажимаешь обратно по кнопки исправить
 
 function changeX(xValue) {
     let button = document.getElementById("x_" + xValue);
     let btn = document.getElementById("hidden");
     if (!button.classList.contains("selected")) {
-        x = xValue;
+        x_value.value === ""
+        console.log(x_value.value);
         let oldSelectedButton = document.querySelector(".selected");
         if (oldSelectedButton !== null)
             oldSelectedButton.classList.remove("selected");
+            checkX();
         button.classList.add("selected");
         checkX();
     } else {
