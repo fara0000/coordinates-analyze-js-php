@@ -72,6 +72,9 @@
                 $duration_start = microtime(true);
                 if( isset($_GET["X"]) && isset($_GET["Y"]) && isset($_GET["R"])) {
                     function validate() {
+                        // $x = intval($_GET["X"]);
+                        // $y = floatval($_GET["Y"]);
+                        // $r = intval($_GET["R"]);
                         $is_valid = true;
 
                         if (!is_numeric($_GET["X"]) || ($_GET["X"] < -4) || ($_GET["X"] > 4)) {
@@ -106,9 +109,9 @@
                         <tbody>";
 
                         $extime_start = microtime();
-                        $x = htmlspecialchars($_GET["X"]);
-                        $y = htmlspecialchars($_GET["Y"]);
-                        $r = htmlspecialchars($_GET["R"]);
+                        $x = intval($_GET["X"]);
+                        $y = floatval($_GET["Y"]);
+                        $r = intval($_GET["R"]);
 
                         echo "<tr>
                         <td>$x</td>
